@@ -1,7 +1,7 @@
 #include "wfc.h"
 
 #include <math.h>
-#include <print.h>
+#include <vdp.h>
 
 static inline u16 cell_index(u8 x, u8 y)
 {
@@ -150,8 +150,7 @@ i16 wave_observe(wave_t* wave)
     tile_id_t selected = possibilities[Math_GetRandomMax8(count)];
     cell_collapse(cell, selected);
 
-    Print_SetPosition(cell_x(cell_index_val), cell_y(cell_index_val));
-    Print_DrawChar(TILE_CHARS[selected]);
+    VDP_Poke_GM2(cell_x(cell_index_val), cell_y(cell_index_val), selected);
 
     return cell_index_val;
 }

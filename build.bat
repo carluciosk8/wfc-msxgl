@@ -7,6 +7,8 @@
 ::────────────────────────────────────────────────────────────────────
 @echo off
 
+SET MSXGL_DIR=D:\dev\MSXgl
+
 cls
 
-..\..\tools\build\Node\node.exe ..\..\engine\script\js\build.js %1 %2 %3 %4 %5 %6 %7 %8 %9
+%MSXGL_DIR%\tools\build\Node\node.exe %MSXGL_DIR%\engine\script\js\build.js %1 %2 %3 %4 %5 %6 %7 %8 %9
